@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person';
 //import person from './Person/Person';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 
 class App extends Component {
 
@@ -100,15 +100,17 @@ class App extends Component {
 
 
     return (
-      <div className="App">
-        <h1>Hi I'am React App!</h1>
-        <p className={classes.join(' ')}>This is really Working!</p>
+      <StyleRoot>
+        <div className="App">
+          <h1>Hi I'am React App!</h1>
+          <p className={classes.join(' ')}>This is really Working!</p>
 
-        <button 
-            style={style} 
-            onClick={this.togglePersonsHandler}> Switch Name</button>        
-            {persons}
-      </div>
+          <button 
+              style={style} 
+              onClick={this.togglePersonsHandler}> Switch Name</button>        
+              {persons}
+        </div>
+      </StyleRoot>
     );
   }
 }
